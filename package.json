@@ -1,0 +1,24 @@
+{
+  "name": "devtree_server",
+  "version": "1.0.0",
+  "description": "DevTree proyecto full stack con Node, Express, TypeSript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aldaydev/devtree_server.git"
+  },
+  "keywords": [],
+  "author": "Rafael Alday",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aldaydev/devtree_server/issues"
+  },
+  "homepage": "https://github.com/aldaydev/devtree_server#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
