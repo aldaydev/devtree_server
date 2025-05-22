@@ -1,8 +1,9 @@
 import express from 'express';
+import router from './router';
+
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hola con TypeSript')
-});
+app.use('/', router);
+
 
 export default app;

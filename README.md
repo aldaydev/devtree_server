@@ -8,3 +8,5 @@ DevTree: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 * Instalación de nodemon
 * Configurar modulos ESM
 * Configurar TypeScript
+* Configuración de Router
+* 
