@@ -1,17 +1,7 @@
-import express from 'express';
-
-const app = express();
-
-// Routing
-
-app.get('/', (req, res) => {
-    res.send('Hola con TypeSript')
-});
+import server from './server';
 
 const PORT = process.env.PORT || 4000;
 
-//Listen the server
-
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log('Server running');
 })
