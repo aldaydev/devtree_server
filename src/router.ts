@@ -2,16 +2,9 @@ import { Router } from "express";
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.send('Hola con TypeSript')
-});
-
-router.get('/nosotros', (req, res) => {
-    res.send('Nosotros')
-});
-
-router.get('/blog', (req, res) => {
-    res.send('Blog')
-});
+/** Autenticación y registro */
+router.post('/auth/register', (req, res) => {
+    console.log('Desde register');
+})
 
 export default router;
