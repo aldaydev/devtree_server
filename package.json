@@ -4,7 +4,8 @@
   "description": "DevTree proyecto full stack con Node, Express, TypeSript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -13,12 +14,17 @@
   "keywords": [],
   "author": "Rafael Alday",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/aldaydev/devtree_server/issues"
   },
   "homepage": "https://github.com/aldaydev/devtree_server#readme",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
