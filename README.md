@@ -2,6 +2,11 @@
 
 DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
+## Sprint 2 (backend)
+
+Registro y autenticación de usuarios
+
+
 ## Sprint 1 (backend)
 
 Configuración inicial del backend.
