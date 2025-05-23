@@ -6,6 +6,9 @@ DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
 Registro y autenticación de usuarios
 
+* Creación de modelo User + Interface TS
+* Creación de Handlers (controladores)
+
 
 ## Sprint 1 (backend)
 
