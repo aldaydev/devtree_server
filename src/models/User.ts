@@ -1,12 +1,20 @@
 import mongoose, { Schema } from "mongoose";
 
 interface IUser {
+    handle: string,
     name: string,
     email: string,
     password: string
 }
 
 const userSchema = new Schema({
+    handle: {
+        type: String,
+        require: true,
+        trim: true,
+        lowercase: true,
+        unique: true
+    },
     name:{
         type: String,
         require: true,
@@ -16,7 +24,8 @@ const userSchema = new Schema({
         type: String,
         require: true,
         trim: true, //Eliminará espacios en blanco vacíos al inicio y final
-        unique: true
+        unique: true,
+        lowercase: true
     },
     password:{
         type: String,
