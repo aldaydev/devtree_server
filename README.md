@@ -11,6 +11,8 @@ Registro y autenticación de usuarios
 * Hashing del password con bcrypt
 * Transformación del handle con slug (v 1.1.0 para que funcione)
 * Validación con express validator
+* Login de usuarios
+* Middleware de validación
 
 
 ## Sprint 1 (backend)
