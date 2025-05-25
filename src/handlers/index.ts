@@ -52,6 +52,8 @@ export const login = async (req: Request, res: Response) => {
             throw new Error('Password Incorrecto');
         }
 
+        res.status(200).send('Autenticado correctamente');
+
     } catch (error) {
         res.status(400).json(error.message);
     }
