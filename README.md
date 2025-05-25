@@ -4,10 +4,11 @@ DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
 ## Sprint 3 (backend)
 
-Instalación y configuración de CORS
+Instalación y configuración de CORS, JWT, Cookies.
 
 * Instalación de CORS + types
 * Configuración de CORS para admitir peticiones desde el frontend
+* Configuración Json Web Token
 
 
 ## Sprint 2 (backend)

@@ -2,6 +2,7 @@ import type { Request, Response } from "express";
 import slug from "slug";
 import User from "../models/User";
 import { checkPassword, hashPassword } from "../utils/auth";
+import { generateJWT } from "../utils/jwt";
 
 export const createAccount = async (req: Request, res: Response) => {
 
@@ -40,19 +41,21 @@ export const login = async (req: Request, res: Response) => {
         const { email, password } = req.body;
 
         //Validar si el usuario existe
-        const userExists = await User.findOne({email});
-        if(!userExists){
+        const user = await User.findOne({email});
+        if(!user){
             throw new Error('El usuario no existe');
         }
 
         //Validar si el password es correcto
-        const isPasswordCorrect = await checkPassword(password, userExists.password);
+        const isPasswordCorrect = await checkPassword(password, user.password);
         
         if(!isPasswordCorrect){
             throw new Error('Password Incorrecto');
         }
 
-        res.status(200).send('Autenticado correctamente');
+        const token = generateJWT({id: user._id});
+
+        res.status(200).send(token);
 
     } catch (error) {
         res.status(400).json(error.message);
