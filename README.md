@@ -2,6 +2,13 @@
 
 DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
+## Sprint 3 (backend)
+
+Instalación y configuración de CORS
+
+* Instalación de CORS + types
+
+
 ## Sprint 2 (backend)
 
 Registro y autenticación de usuarios
