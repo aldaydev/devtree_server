@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import slug from "slug";
+
 import User from "../models/User";
 import { checkPassword, hashPassword } from "../utils/auth";
 import { generateJWT } from "../utils/jwt";
@@ -60,4 +61,8 @@ export const login = async (req: Request, res: Response) => {
     } catch (error) {
         res.status(400).json(error.message);
     }
+}
+
+export const getUser = async (req: Request, res: Response) => {
+    res.json(req.user);
 }

@@ -9,7 +9,8 @@ Instalación y configuración de CORS, JWT, Cookies.
 * Instalación de CORS + types
 * Configuración de CORS para admitir peticiones desde el frontend
 * Configuración Json Web Token
-
+* Endpoint "/user" para autenticar usuario
+* Creando middleware de autenticación
 
 ## Sprint 2 (backend)
 
