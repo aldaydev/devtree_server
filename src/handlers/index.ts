@@ -1,25 +1,24 @@
 import type { Request, Response } from "express";
 import slug from "slug";
-
+import formidable from "formidable";
+import cloudinary from "../config/cloudinary";
 import User from "../models/User";
 import { checkPassword, hashPassword } from "../utils/auth";
 import { generateJWT } from "../utils/jwt";
 
 export const createAccount = async (req: Request, res: Response) => {
-
     try {
-
         const { email, password } = req.body;
         //Validar si el usuario existe
-        const userExists = await User.findOne({email});
-        if(userExists){
-            throw new Error('El usuario ya está registrado');
+        const userExists = await User.findOne({ email });
+        if (userExists) {
+            throw new Error("El usuario ya está registrado");
         }
         //Validar si existe el handle
-        const handle = slug(req.body.handle, '');
-        const handleExists = await User.findOne({handle});
-        if(handleExists){
-            throw new Error('Nombre de usuario no disponible');
+        const handle = slug(req.body.handle, "");
+        const handleExists = await User.findOne({ handle });
+        if (handleExists) {
+            throw new Error("Nombre de usuario no disponible");
         }
         //Instanciar nuevo usuario referente al schema User
         const user = new User(req.body);
@@ -29,52 +28,49 @@ export const createAccount = async (req: Request, res: Response) => {
         user.handle = handle;
         //Guardar usuario en MongoDB
         await user.save();
-        res.status(201).send('Registro creado correctamente');
+        res.status(201).send("Registro creado correctamente");
     } catch (error) {
         res.status(400).json(error.message);
     }
-}
+};
 
 export const login = async (req: Request, res: Response) => {
-    
     try {
-
         const { email, password } = req.body;
 
         //Validar si el usuario existe
-        const user = await User.findOne({email});
-        if(!user){
-            throw new Error('El usuario no existe');
+        const user = await User.findOne({ email });
+        if (!user) {
+            throw new Error("El usuario no existe");
         }
 
         //Validar si el password es correcto
         const isPasswordCorrect = await checkPassword(password, user.password);
-        
-        if(!isPasswordCorrect){
-            throw new Error('Password Incorrecto');
+
+        if (!isPasswordCorrect) {
+            throw new Error("Password Incorrecto");
         }
 
-        const token = generateJWT({id: user._id});
+        const token = generateJWT({ id: user._id });
 
         res.status(200).send(token);
-
     } catch (error) {
         res.status(400).json(error.message);
     }
-}
+};
 
 export const getUser = async (req: Request, res: Response) => {
     res.json(req.user);
-}
+};
 
 export const updateProfile = async (req: Request, res: Response) => {
     try {
         const { description } = req.body;
-        const handle = slug(req.body.handle, '');
-        const handleExists = await User.findOne({handle});
-        if(handleExists && handleExists.email !== req.user.email ){
-            const error = new Error('Nombre de usuario no disponible');
-            res.status(400).json({error: error.message});
+        const handle = slug(req.body.handle, "");
+        const handleExists = await User.findOne({ handle });
+        if (handleExists && handleExists.email !== req.user.email) {
+            const error = new Error("Nombre de usuario no disponible");
+            res.status(400).json({ error: error.message });
             return;
         }
 
@@ -82,12 +78,28 @@ export const updateProfile = async (req: Request, res: Response) => {
         req.user.handle = handle;
 
         await req.user.save();
-        res.send('Perfi actualizado correctamente');
-
-
+        res.send("Perfi actualizado correctamente");
     } catch (error) {
-        error = new Error('Hubo un error');
-        res.status(500).json({error: error.message})
-        return 
+        error = new Error("Hubo un error");
+        res.status(500).json({ error: error.message });
+        return;
     }
-}
+};
+
+export const uploadImage = async (req: Request, res: Response) => {
+    req.on("data", (chunk) => {
+        console.log("chunk", chunk.toString());
+    });
+
+    const form = formidable({ multiples: false });
+    form.parse(req, (error, fields, files) => {
+        console.log("File", files.file[0].filepath);
+    });
+
+    try {
+    } catch (error) {
+        error = new Error("Hubo un error");
+        res.status(500).json({ error: error.message });
+        return;
+    }
+};

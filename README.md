@@ -2,6 +2,15 @@
 
 DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
+## Sprint 4 (backend)
+
+Gestionar subida de imágenes
+
+* Instalación y configuración cloudinary
+npm install cloudinary
+npm i formidable
+
+
 ## Sprint 3 (backend)
 
 Instalación y configuración de CORS, JWT, Cookies.
