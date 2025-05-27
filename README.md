@@ -11,6 +11,7 @@ Instalación y configuración de CORS, JWT, Cookies.
 * Configuración Json Web Token
 * Endpoint "/user" para autenticar usuario
 * Creando middleware de autenticación
+* Actualizar los datos de un usuario
 
 ## Sprint 2 (backend)
 

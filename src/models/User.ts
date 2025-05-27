@@ -1,10 +1,11 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 
-export interface IUser {
+export interface IUser extends Document {
     handle: string,
     name: string,
     email: string,
-    password: string
+    password: string,
+    description: string
 }
 
 const userSchema = new Schema({
@@ -18,20 +19,25 @@ const userSchema = new Schema({
     name:{
         type: String,
         require: true,
-        trim: true //Eliminará espacios en blanco vacíos al inicio y final
+        trim: true
     },
     email:{
         type: String,
         require: true,
-        trim: true, //Eliminará espacios en blanco vacíos al inicio y final
+        trim: true,
         unique: true,
         lowercase: true
     },
     password:{
         type: String,
         require: true,
-        trim: true //Eliminará espacios en blanco vacíos al inicio y final
+        trim: true
     },
+    description:{
+        type: String,
+        default: '',
+        trim: true
+    }
 })
 
 // Utilizamos la función <Generics> para asociar el interface al schema
