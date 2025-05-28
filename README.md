@@ -9,6 +9,8 @@ Gestionar subida de imágenes
 * Instalación y configuración cloudinary
 npm install cloudinary
 npm i formidable
+* Creación de enfpoint para subir imagenes
+Para generar nombre de archivo aleatorio: npm i uuid
 
 
 ## Sprint 3 (backend)
