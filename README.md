@@ -2,6 +2,10 @@
 
 DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
+## Sprint 5 (backend)
+
+Gestionar las páginas públicas
+
 ## Sprint 4 (backend)
 
 Gestionar subida de imágenes
