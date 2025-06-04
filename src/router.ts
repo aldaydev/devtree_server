@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { body } from 'express-validator';
-import { createAccount, getUser, getUserByHandle, login, updateProfile, uploadImage } from "./handlers";
+import { createAccount, getUser, getUserByHandle, login, searchByHandle, updateProfile, uploadImage } from "./handlers";
 import { handleInputErrors } from "./middleware/validation";
 import { authenticate } from "./middleware/auth";
 
@@ -8,7 +8,7 @@ const router = Router();
 
 /** Autenticación y registro */
 router.post('/auth/register', 
-    body('handle').notEmpty().withMessage('El handler no puede estar vacío'),
+    body('handle').notEmpty().withMessage('El handle no puede estar vacío'),
     body('name').notEmpty().withMessage('El nombre no puede estar vacío'),
     body('email').isEmail().withMessage('Email no válido'),
     body('password').isLength({min: 8}).withMessage('Contraseña demasiado corta. Mínimo 8 caracteres.'),
@@ -26,8 +26,7 @@ router.post('/auth/login',
 router.get('/user', authenticate , getUser);
 
 router.patch('/user', 
-    body('handle').notEmpty().withMessage('El handler no puede estar vacío'),
-    body('description').notEmpty().withMessage('La descripción no puede estar vacía'),
+    body('handle').notEmpty().withMessage('El handle no puede estar vacío'),
     handleInputErrors,
     authenticate, 
     updateProfile 
@@ -35,6 +34,12 @@ router.patch('/user',
 
 router.post('/user/image', authenticate, uploadImage);
 
-router.get('/:handle', getUserByHandle)
+router.get('/:handle', getUserByHandle);
+
+router.post(
+    '/search', 
+    body('handle').notEmpty().withMessage('El handle no puede estar vacío'),
+    searchByHandle
+);
 
 export default router;

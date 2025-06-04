@@ -6,6 +6,8 @@ DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
 Gestionar las páginas públicas
 
+* Endpoint del buscador de handles
+
 ## Sprint 4 (backend)
 
 Gestionar subida de imágenes
