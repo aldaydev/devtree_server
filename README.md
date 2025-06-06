@@ -2,6 +2,10 @@
 
 DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
+## Remake 1 (backend)
+
+* Cambiar "handle" por "username"
+
 ## Sprint 5 (backend)
 
 Gestionar las páginas públicas
