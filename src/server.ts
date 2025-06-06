@@ -5,16 +5,19 @@ import router from './router';
 import { connectDB } from './config/db';
 import { corsConfig } from './config/cors';
 
+// Conexión a la BD
 connectDB();
 
+// Inicialización de express
 const app = express();
 
 // Cors
 app.use(cors(corsConfig));
 
-//Leer datos de formularios
+// Leer datos de formularios
 app.use(express.json());
 
+// Router Global
 app.use('/', router);
 
 

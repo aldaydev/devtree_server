@@ -2,6 +2,8 @@ import type { Request, Response, NextFunction } from "express";
 import jwt from 'jsonwebtoken';
 import User, { IUser } from "../models/User";
 
+//Definimos que en el request podrá haber una clave "user" tipada con "IUser"
+//IUser es el interface que rige el schema del usuario
 declare global {
     namespace Express {
         interface Request {
@@ -10,6 +12,7 @@ declare global {
     }
 }
 
+// Función para autenticar a un usuario comprobando su token
 export const authenticate = async (req: Request, res: Response, next: NextFunction) => {
     const bearer = req.headers.authorization;
     if(!bearer){

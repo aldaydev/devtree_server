@@ -4,7 +4,8 @@ DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
 ## Remake 1 (backend)
 
-* Cambiar "handle" por "username"
+Cambio global de la clave "handle" por "username" en todos los ficheros.
+He comentado código
 
 ## Sprint 5 (backend)
 
