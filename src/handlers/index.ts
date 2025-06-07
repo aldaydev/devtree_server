@@ -71,7 +71,6 @@ export const login = async (req: Request, res: Response) => {
 
 // Controlador para OBTENER LOS DATOS DEL USUARIO
 export const getUser = async (req: Request, res: Response) => {
-    console.log(req.user);
     res.json(req.user);
 };
 
@@ -134,6 +133,10 @@ export const updateAccount = async (req: Request, res: Response) => {
 
 export const deleteAccount = async (req: Request, res: Response) => {
     try {
+        if(req.user.image){
+            const prevImageId = req.user.image.split('/')[7].split('.')[0];
+            cloudinary.uploader.destroy(prevImageId)
+        }
         await User.deleteOne({email: req.user.email});
         res.send('La cuenta ha sido eliminada correctamente');
     } catch (error) {
@@ -147,7 +150,10 @@ export const deleteAccount = async (req: Request, res: Response) => {
 export const uploadImage = async (req: Request, res: Response) => {
     try {
 
-        const prevImageId = req.user.image.split('/')[7].split('.')[0];
+        let prevImageId;
+        if(req.user.image){
+            prevImageId = req.user.image.split('/')[7].split('.')[0];
+        }
 
         const form = formidable({ multiples: false });
         form.parse(req, (error, fields, files) => {
@@ -161,7 +167,7 @@ export const uploadImage = async (req: Request, res: Response) => {
                 if(result){
                     req.user.image = result.secure_url;
                     await req.user.save();
-                    cloudinary.uploader.destroy(prevImageId);
+                    if(prevImageId) cloudinary.uploader.destroy(prevImageId);
                     res.json({image: result.secure_url});
                 }
             });
