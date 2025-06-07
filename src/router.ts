@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { body } from 'express-validator';
-import { createAccount, getUser, getUserByUsername, login, searchByUsername, updateAccount, updateProfile, uploadImage } from "./handlers";
+import { createAccount, deleteAccount, getUser, getUserByUsername, login, searchByUsername, updateAccount, updateProfile, uploadImage } from "./handlers";
 import { handleInputErrors } from "./middleware/validation";
 import { authenticate } from "./middleware/auth";
 
@@ -8,7 +8,7 @@ const router = Router();
 
 // Ruta para REGISTRAR NUEVO USUARIO
 router.post('/auth/register', 
-    body('username').notEmpty().withMessage('El npmbre de usuario no puede estar vacío'),
+    body('username').notEmpty().withMessage('El nombre de usuario no puede estar vacío'),
     body('name').notEmpty().withMessage('El nombre no puede estar vacío'),
     body('email').isEmail().withMessage('Email no válido'),
     body('password').isLength({min: 8}).withMessage('Contraseña demasiado corta. Mínimo 8 caracteres.'),
@@ -43,6 +43,11 @@ router.patch('/account',
     handleInputErrors,
     authenticate,
     updateAccount
+);
+
+router.delete('/account',
+    authenticate,
+    deleteAccount
 );
 
 // Ruta para SUBIR UNA IMAGEN

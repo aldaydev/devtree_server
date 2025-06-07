@@ -132,9 +132,23 @@ export const updateAccount = async (req: Request, res: Response) => {
     }
 }
 
+export const deleteAccount = async (req: Request, res: Response) => {
+    try {
+        await User.deleteOne({email: req.user.email});
+        res.send('La cuenta ha sido eliminada correctamente');
+    } catch (error) {
+        error = new Error("Hubo un error");
+        res.status(500).json({ error: error.message });
+        return;
+    }
+}
+
 // Controlador para ACTUALIZAR LA IMAGEN
 export const uploadImage = async (req: Request, res: Response) => {
     try {
+
+        const prevImageId = req.user.image.split('/')[7].split('.')[0];
+
         const form = formidable({ multiples: false });
         form.parse(req, (error, fields, files) => {
             cloudinary.uploader.upload(files.file[0].filepath, {public_id: uuid()}, async function (error, result) {
@@ -147,7 +161,8 @@ export const uploadImage = async (req: Request, res: Response) => {
                 if(result){
                     req.user.image = result.secure_url;
                     await req.user.save();
-                    res.json({image: result.secure_url})
+                    cloudinary.uploader.destroy(prevImageId);
+                    res.json({image: result.secure_url});
                 }
             });
         });

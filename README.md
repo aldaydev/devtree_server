@@ -5,6 +5,8 @@ DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 ## Remake 2 (backend)
 
 * Realizado endpoint para cambiar nombre y contraseña (opcional)
+* Si se sube una nueva imagen, se borra la anterior de Cloudinary
+* Crear endpoint para eliminar la cuenta
 
 ## Remake 1 (backend)
 
