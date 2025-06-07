@@ -71,6 +71,7 @@ export const login = async (req: Request, res: Response) => {
 
 // Controlador para OBTENER LOS DATOS DEL USUARIO
 export const getUser = async (req: Request, res: Response) => {
+    console.log(req.user);
     res.json(req.user);
 };
 
@@ -106,6 +107,31 @@ export const updateProfile = async (req: Request, res: Response) => {
     }
 };
 
+// Controlador para ACTUALIZAR LA CUENTA
+export const updateAccount = async (req: Request, res: Response) => {
+    try {
+        const { password, name } = req.body;
+        
+        if(password){
+            //Hash del password y actualización en user
+            const hash = await hashPassword(password);
+            req.user.password = hash;
+        }
+
+        req.user.name = name;
+
+        //Cuardamos los datos
+        await req.user.save();
+
+        res.send("Cuenta actualizada correctamente");
+
+    } catch (error) {
+        error = new Error("Hubo un error");
+        res.status(500).json({ error: error.message });
+        return;
+    }
+}
+
 // Controlador para ACTUALIZAR LA IMAGEN
 export const uploadImage = async (req: Request, res: Response) => {
     try {
@@ -131,6 +157,7 @@ export const uploadImage = async (req: Request, res: Response) => {
         return;
     }
 };
+
 
 // Controlador para OBTENER UN USUARIO POR SU USERNAME
 export const getUserByUsername = async (req: Request, res: Response) => {

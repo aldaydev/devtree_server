@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { body } from 'express-validator';
-import { createAccount, getUser, getUserByUsername, login, searchByUsername, updateProfile, uploadImage } from "./handlers";
+import { createAccount, getUser, getUserByUsername, login, searchByUsername, updateAccount, updateProfile, uploadImage } from "./handlers";
 import { handleInputErrors } from "./middleware/validation";
 import { authenticate } from "./middleware/auth";
 
@@ -28,7 +28,7 @@ router.post('/auth/login',
 // Para ello debe tener un TOKEN VÁLIDO
 router.get('/user', authenticate , getUser);
 
-// Ruta para VALIDAR EL TOKEN y OBTENER DATOS DEL USUARIO
+// Ruta para VALIDAR EL TOKEN y EDITAR DATOS DEL USUARIO
 // Debe haber algún username (no puede ponerse vacío)
 // Debe tener un TOKEN VÁLIDO para CAMBIAR DATOS
 router.patch('/user', 
@@ -36,6 +36,13 @@ router.patch('/user',
     handleInputErrors,
     authenticate, 
     updateProfile 
+);
+
+router.patch('/account',
+    body('name').notEmpty().withMessage('El nombre no puede estar vacío'),
+    handleInputErrors,
+    authenticate,
+    updateAccount
 );
 
 // Ruta para SUBIR UNA IMAGEN

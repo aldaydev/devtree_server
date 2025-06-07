@@ -4,7 +4,7 @@ DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
 ## Remake 2 (backend)
 
-
+* Realizado endpoint para cambiar nombre y contraseña (opcional)
 
 ## Remake 1 (backend)
 
