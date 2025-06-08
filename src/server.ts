@@ -17,6 +17,11 @@ app.use(cors(corsConfig));
 // Leer datos de formularios
 app.use(express.json());
 
+// Health endpoint
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
+
 // Router Global
 app.use('/', router);
 
