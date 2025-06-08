@@ -2,6 +2,10 @@
 
 MLink App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
+## Remake 3 (backend)
+
+Realización de testing con JEST
+
 ## Remake 2 (backend)
 
 * Realizado endpoint para cambiar nombre y contraseña (opcional)
