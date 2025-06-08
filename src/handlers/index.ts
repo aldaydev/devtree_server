@@ -43,6 +43,7 @@ export const createAccount = async (req: Request, res: Response) => {
 
 // Controlador para ACCEDER
 export const login = async (req: Request, res: Response) => {
+    console.log('REQUEST----------------------', req)
     try {
         //Rescatamos email y pass de la solicitud
         const { email, password } = req.body;
