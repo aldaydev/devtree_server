@@ -1,6 +1,6 @@
-# devtree_server
+# mlink_server
 
-DevTree App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
+MLink App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
 ## Remake 2 (backend)
 
