@@ -1,5 +1,5 @@
 {
-  "name": "devtree_server",
+  "name": "mlink_server",
   "version": "1.0.0",
   "description": "DevTree proyecto full stack con Node, Express, TypeSript",
   "main": "index.js",

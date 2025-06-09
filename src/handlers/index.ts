@@ -43,7 +43,6 @@ export const createAccount = async (req: Request, res: Response) => {
 
 // Controlador para ACCEDER
 export const login = async (req: Request, res: Response) => {
-    console.log('REQUEST----------------------', req)
     try {
         //Rescatamos email y pass de la solicitud
         const { email, password } = req.body;
@@ -63,6 +62,7 @@ export const login = async (req: Request, res: Response) => {
         //Generación del token
         const token = generateJWT({ id: user._id });
 
+        console.log('----EL TOKEN EN CUESTIÓN---', token)
         res.status(200).send(token);
 
     } catch (error) {
