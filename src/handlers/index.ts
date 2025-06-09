@@ -62,7 +62,6 @@ export const login = async (req: Request, res: Response) => {
         //Generación del token
         const token = generateJWT({ id: user._id });
 
-        console.log('----EL TOKEN EN CUESTIÓN---', token)
         res.status(200).send(token);
 
     } catch (error) {
