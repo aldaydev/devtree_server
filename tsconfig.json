@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "outDir": "./dist", // Directorio donde se compilará TS a JS
-        "rootDir": "./src", // Directorio fuente donde se leera TS
+        "rootDir": "./", // Directorio fuente donde se leera TS
         "lib": ["ESNext"], // Qué funcionalidades modernas quieres usar en tiempo de desarrollo
         "target": "ESNext", // Qué versión de JavaScript quieres generar
         "moduleResolution": "NodeNext", // Define cómo encontrar los archivos que se importan
@@ -10,6 +10,7 @@
         "sourceMap": true, // Crea un archivo .map que conecta tu código TypeScript con el JavaScript generado.
         "esModuleInterop": true, // Hace que puedas importar módulos CommonJS como si fueran módulos ES6.
         "declaration": true, // Genera archivos .d.ts con las definiciones de tipos de tu código.
+        "isolatedModules": true
     },
-    "include": ["src/**/*.ts"] // Compilar todos los archivos .ts en todos los directorios o subdirectorio de src
+    "include": ["src/**/*.ts", "tests"] // Compilar todos los archivos .ts en todos los directorios o subdirectorio de src
 }

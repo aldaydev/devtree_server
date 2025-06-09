@@ -6,6 +6,18 @@ MLink App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
 Realización de testing con JEST
 
+* Instalación de jest en el proyecto
+    npm install --save-dev jest ts-jest @types/jest
+* Inicializar jest.config.js
+    npx ts-jest config:init => Esto creará el archivo de configuración (js)
+* Cambiamos el jest.config.js a jest.config.ts (código)
+    Además, luego tendremos que inicializar jest con:
+    npx jest --config jest.config.ts
+* Añadimos el directorio "tests" en el include del tsconfig.json
+* Creamos un tscofig.build.json que heredará del tsconfig.json pero sin los tests (para producción)
+* Instalación de supertest (hacer test en peticiones)
+
+
 ## Remake 2 (backend)
 
 * Realizado endpoint para cambiar nombre y contraseña (opcional)
