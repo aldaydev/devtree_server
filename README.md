@@ -16,6 +16,10 @@ Realización de testing con JEST
 * Añadimos el directorio "tests" en el include del tsconfig.json
 * Creamos un tscofig.build.json que heredará del tsconfig.json pero sin los tests (para producción)
 * Instalación de supertest (hacer test en peticiones)
+* Si queremos ejecutar un único test:
+    npx jest tests/register.test.ts
+    o
+    npm test -- tests/register.test.ts
 
 
 ## Remake 2 (backend)

@@ -62,7 +62,7 @@ export const login = async (req: Request, res: Response) => {
         //Generación del token
         const token = generateJWT({ id: user._id });
 
-        res.status(200).send(token);
+        res.status(200).json({token});
 
     } catch (error) {
         res.status(400).json(error.message);

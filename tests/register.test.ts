@@ -1,6 +1,7 @@
 import request from "supertest";
 import app from "../src/server";
 
+// Función reutilizable para llamar al endpoint /auth/register
 const registerRequest = async (data = {}) => {
     const defaultData = {
         name: "Jest",
@@ -21,14 +22,6 @@ const registerRequest = async (data = {}) => {
 };
 
 describe("POST /auth/register", () => {
-
-    // it('Deberá responder status 201 y send "Registro creado correctamente" si todo es correcto', async () => {
-
-    //     const res = await registerRequest();
-
-    //     expect(res.status).toBe(201);
-    //     expect(res.text).toBe("Registro creado correctamente");
-    // });
 
     it("Deberá responder status 400 y un mensaje si no hay contraseña", async () => {
 
@@ -74,5 +67,28 @@ describe("POST /auth/register", () => {
 
     });
 
+    it("Deberá responder status 400 y un mensaje si ya está registrado el email", async () => {
+
+        const res = await registerRequest({email: 'initial@initial.es'});
+
+        expect(res.status).toBe(400);
+        expect(res.body).toBe('El usuario ya está registrado');
+    });
+
+    it("Deberá responder status 400 y un mensaje si el username ya está en uso", async () => {
+
+        const res = await registerRequest({username: 'initial'});
+
+        expect(res.status).toBe(400);
+        expect(res.body).toBe('Nombre de usuario no disponible');
+    });
+
+    // it('Deberá responder status 201 y send "Registro creado correctamente" si todo es correcto', async () => {
+
+    //     const res = await registerRequest();
+
+    //     expect(res.status).toBe(201);
+    //     expect(res.text).toBe("Registro creado correctamente");
+    // });
 
 });
