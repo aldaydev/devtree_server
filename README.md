@@ -4,7 +4,7 @@ Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu
 
 ### Enlace al proyecto desplegado: 
 
-[![Ver Proyecto](https://img.shields.io/badge/🚀_Proyecto_Desplegado-007acc?style=for-the-badge&logo=vercel&logoColor=white)](https://mlink.alday.dev)
+[![VER PROYECTO](https://img.shields.io/badge/🚀_Proyecto_Desplegado-007acc?style=for-the-badge&logo=vercel&logoColor=white)](https://mlink.alday.dev)
 
 ## Tecnilogías utilizadas para el backend:
 
@@ -15,26 +15,17 @@ Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu
 ![NODE.JS](https://img.shields.io/badge/NODE.JS-339933?style=for-the-badge&logo=node.js&logoColor=white) ![EXPRESS](https://img.shields.io/badge/EXPRESS-000000?style=for-the-badge&logo=express&logoColor=white) ![NODEMON](https://img.shields.io/badge/NODEMON-76D04B?style=for-the-badge&logo=npm&logoColor=white)
 
 ### 📦 DEPENDENCIAS  
-![BCRYPT](https://img.shields.io/badge/BCRYPT-CC3534?style=for-the-badge&logo=npm&logoColor=white)  
-![CORS](https://img.shields.io/badge/CORS-CC3534?style=for-the-badge&logo=npm&logoColor=white)  
-![DOTENV](https://img.shields.io/badge/DOTENV-CC3534?style=for-the-badge&logo=npm&logoColor=white)  
-![EXPRESS-VALIDATOR](https://img.shields.io/badge/EXPRESS--VALIDATOR-CC3534?style=for-the-badge&logo=npm&logoColor=white)  
-![FORMIDABLE](https://img.shields.io/badge/FORMIDABLE-CC3534?style=for-the-badge&logo=npm&logoColor=white)  
-![JSONWEBTOKEN](https://img.shields.io/badge/JSONWEBTOKEN-CC3534?style=for-the-badge&logo=npm&logoColor=white)  
-![SLUG](https://img.shields.io/badge/SLUG-CC3534?style=for-the-badge&logo=npm&logoColor=white)  
-![UUID](https://img.shields.io/badge/UUID-CC3534?style=for-the-badge&logo=npm&logoColor=white)
+![BCRYPT](https://img.shields.io/badge/BCRYPT-CC3534?style=for-the-badge&logo=npm&logoColor=white) ![CORS](https://img.shields.io/badge/CORS-CC3534?style=for-the-badge&logo=npm&logoColor=white)  ![DOTENV](https://img.shields.io/badge/DOTENV-CC3534?style=for-the-badge&logo=npm&logoColor=white)  ![EXPRESS-VALIDATOR](https://img.shields.io/badge/EXPRESS--VALIDATOR-CC3534?style=for-the-badge&logo=npm&logoColor=white)  ![FORMIDABLE](https://img.shields.io/badge/FORMIDABLE-CC3534?style=for-the-badge&logo=npm&logoColor=white)  ![JSONWEBTOKEN](https://img.shields.io/badge/JSONWEBTOKEN-CC3534?style=for-the-badge&logo=npm&logoColor=white)  ![SLUG](https://img.shields.io/badge/SLUG-CC3534?style=for-the-badge&logo=npm&logoColor=white)  ![UUID](https://img.shields.io/badge/UUID-CC3534?style=for-the-badge&logo=npm&logoColor=white)
 
 ### 🗄️ BASE DE DATOS  
-![MONGOOSE](https://img.shields.io/badge/MONGOOSE-880000?style=for-the-badge&logo=mongodb&logoColor=white)  
-![MONGODB](https://img.shields.io/badge/MONGODB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![MONGOOSE](https://img.shields.io/badge/MONGOOSE-880000?style=for-the-badge&logo=mongodb&logoColor=white)  ![MONGODB](https://img.shields.io/badge/MONGODB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ### 🧪 TESTING  
-![JEST](https://img.shields.io/badge/JEST-C21325?style=for-the-badge&logo=jest&logoColor=white)  
-![SUPERTEST](https://img.shields.io/badge/SUPERTEST-CC3534?style=for-the-badge&logo=npm&logoColor=white)
+![JEST](https://img.shields.io/badge/JEST-C21325?style=for-the-badge&logo=jest&logoColor=white)  ![SUPERTEST](https://img.shields.io/badge/SUPERTEST-CC3534?style=for-the-badge&logo=npm&logoColor=white)
 
 ## Enlace al repositorio del front:
 
-[![Ver Repositorio](https://img.shields.io/badge/📂_Repositorio_Frontend-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/aldaydev/mlink_client)
+[![VER REPOSITORIO](https://img.shields.io/badge/📂_Repositorio_Frontend-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/aldaydev/mlink_client)
 
 ----------------------------------------------
 
