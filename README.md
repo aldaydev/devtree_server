@@ -18,6 +18,8 @@ Tecnilogías utilizadas para el backend:
 ![slug](https://img.shields.io/badge/slug-CC3534?style=flat&logo=npm&logoColor=white)
 ![uuid](https://img.shields.io/badge/uuid-CC3534?style=flat&logo=npm&logoColor=white)
 ![nodemon](https://img.shields.io/badge/nodemon-76D04B?style=flat&logo=npm&logoColor=white)
+
+Testing:
 ![Jest](https://img.shields.io/badge/Jest-C21325?style=flat&logo=jest&logoColor=white)
 ![Supertest](https://img.shields.io/badge/supertest-CC3534?style=flat&logo=npm&logoColor=white)
 
