@@ -1,8 +1,8 @@
-# Mlink (server)
+# Mlink App (server)
 
 Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu perfil, tener tu "username" único y un enlace para compartir de una sola vez todas tus redes sociales como artista musical.
 
-Tecnilogías utilizadas para el backend:
+## Tecnilogías utilizadas para el backend:
 
 ### Lenguaje: 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
