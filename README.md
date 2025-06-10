@@ -1,4 +1,26 @@
-# mlink_server
+# Mlink (server)
+
+Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu perfil, tener tu "username" único y un enlace para compartir de una sola vez todas tus redes sociales como artista musical.
+
+Tecnilogías utilizadas para el backend:
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)
+![bcrypt](https://img.shields.io/badge/bcrypt-CC3534?style=flat&logo=npm&logoColor=white)
+![cors](https://img.shields.io/badge/cors-CC3534?style=flat&logo=npm&logoColor=white)
+![dotenv](https://img.shields.io/badge/dotenv-CC3534?style=flat&logo=npm&logoColor=white)
+![express-validator](https://img.shields.io/badge/express--validator-CC3534?style=flat&logo=npm&logoColor=white)
+![formidable](https://img.shields.io/badge/formidable-CC3534?style=flat&logo=npm&logoColor=white)
+![jsonwebtoken](https://img.shields.io/badge/jsonwebtoken-CC3534?style=flat&logo=npm&logoColor=white)
+![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=flat&logo=mongodb&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
+![slug](https://img.shields.io/badge/slug-CC3534?style=flat&logo=npm&logoColor=white)
+![uuid](https://img.shields.io/badge/uuid-CC3534?style=flat&logo=npm&logoColor=white)
+![nodemon](https://img.shields.io/badge/nodemon-76D04B?style=flat&logo=npm&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-C21325?style=flat&logo=jest&logoColor=white)
+![Supertest](https://img.shields.io/badge/supertest-CC3534?style=flat&logo=npm&logoColor=white)
+
 
 MLink App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
 
