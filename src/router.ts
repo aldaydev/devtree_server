@@ -38,6 +38,7 @@ router.patch('/user',
     updateProfile 
 );
 
+// Ruta para editar los datos de la cuenta
 router.patch('/account',
     body('name').notEmpty().withMessage('El nombre no puede estar vacío'),
     handleInputErrors,
@@ -45,6 +46,7 @@ router.patch('/account',
     updateAccount
 );
 
+// Ruta para eleminar una cuenta
 router.delete('/account',
     authenticate,
     deleteAccount
@@ -61,6 +63,7 @@ router.get('/:username', getUserByUsername);
 router.post(
     '/search', 
     body('username').notEmpty().withMessage('El nombre de usuario no puede estar vacío'),
+    handleInputErrors,
     searchByUsername
 );
 
