@@ -12,9 +12,7 @@ Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu
 ![TYPESCRIPT](https://img.shields.io/badge/TYPESCRIPT-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
 ### 🛠️ ENTORNO DE DESARROLLO  
-![NODE.JS](https://img.shields.io/badge/NODE.JS-339933?style=for-the-badge&logo=node.js&logoColor=white)  
-![EXPRESS](https://img.shields.io/badge/EXPRESS-000000?style=for-the-badge&logo=express&logoColor=white)  
-![NODEMON](https://img.shields.io/badge/NODEMON-76D04B?style=for-the-badge&logo=npm&logoColor=white)
+![NODE.JS](https://img.shields.io/badge/NODE.JS-339933?style=for-the-badge&logo=node.js&logoColor=white) ![EXPRESS](https://img.shields.io/badge/EXPRESS-000000?style=for-the-badge&logo=express&logoColor=white) ![NODEMON](https://img.shields.io/badge/NODEMON-76D04B?style=for-the-badge&logo=npm&logoColor=white)
 
 ### 📦 DEPENDENCIAS  
 ![BCRYPT](https://img.shields.io/badge/BCRYPT-CC3534?style=for-the-badge&logo=npm&logoColor=white)  
