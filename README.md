@@ -2,6 +2,8 @@
 
 Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu perfil, tener tu "username" único y un enlace para compartir de una sola vez todas tus redes sociales como artista musical.
 
+[![Ver Proyecto](https://img.shields.io/badge/🚀_Proyecto_Desplegado-007acc?style=for-the-badge&logo=vercel&logoColor=white)](https://mlink.alday.dev)
+
 ## Tecnilogías utilizadas para el backend:
 
 ### Lenguaje: 
@@ -30,8 +32,13 @@ Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu
 ![Jest](https://img.shields.io/badge/Jest-C21325?style=flat&logo=jest&logoColor=white)
 ![Supertest](https://img.shields.io/badge/supertest-CC3534?style=flat&logo=npm&logoColor=white)
 
+## Enlaces al repositorio del front:
 
-MLink App: proyecto full stack con Node, Express, TypeSript, React y Tailwind
+[![Ver Repositorio](https://img.shields.io/badge/📂_Repositorio_Frontend-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/aldaydev/mlink_client)
+
+----------------------------------------------
+
+A partir de aquí podrás ver mis anotaciones sobre cada "sprint" o "rama" en la que ido trabajando. 
 
 ## Remake 3 (backend)
 
