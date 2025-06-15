@@ -15,8 +15,29 @@
     responses:
       "201":
         $ref: "#/components/responses/SimpleSuccessResponse"
-              
-      "400":
+      "422":
         $ref: '#/components/responses/ValidationError'
-      "400-alt":
+      "400":
+        $ref: '#/components/responses/BadRequestSimple'
+
+/auth/login:
+  post:
+    tags:
+      - Auth
+    summary: Login
+    description: Recibir token de autenticación
+
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/LoginRequest"
+
+    responses:
+      "200":
+        $ref: "#/components/responses/TokenResponse"
+      "422":
+        $ref: '#/components/responses/ValidationError'
+      "400":
         $ref: '#/components/responses/BadRequestSimple'

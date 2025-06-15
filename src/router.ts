@@ -38,6 +38,10 @@ router.patch('/user',
     updateProfile 
 );
 
+// Ruta para SUBIR UNA IMAGEN
+// Debe tener un TOKEN VÁLIDO
+router.post('/user/image', authenticate, uploadImage);
+
 // Ruta para editar los datos de la cuenta
 router.patch('/account',
     body('name').notEmpty().withMessage('El nombre no puede estar vacío'),
@@ -51,10 +55,6 @@ router.delete('/account',
     authenticate,
     deleteAccount
 );
-
-// Ruta para SUBIR UNA IMAGEN
-// Debe tener un TOKEN VÁLIDO
-router.post('/user/image', authenticate, uploadImage);
 
 // Ruta para ACCEDER A LOS DATOS PÚBLICOS DE UN PERFIL
 router.get('/:username', getUserByUsername);

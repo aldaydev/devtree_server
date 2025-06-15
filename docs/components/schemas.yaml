@@ -22,6 +22,21 @@ schemas:
         type: string
         format: password
         example: password123
+  
+  LoginRequest:
+    type: object
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+        format: email
+        example: pepito@correo.com
+      password:
+        type: string
+        format: password
+        example: password123
 
   PrivateUser:
     type: object
@@ -61,6 +76,22 @@ schemas:
       - links
       - __v
   
+  UserUpdateRequest:
+    type: object
+    properties:
+      username:
+        type: string
+        example: "pepito"
+      description:
+        type: string
+        example: "Descripción del perfil de peppito"
+      links:
+        type: string
+        example: '[{"name":"youtube","url":"https://youtube.com","enabled":true,"id":1}]'
+    required:
+      - username
+
+
   PublicUser:
     type: object
     properties:

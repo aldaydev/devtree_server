@@ -1,5 +1,12 @@
 responses:
 
+  PrivateUserResponse:
+    description: Respuesta exitosa con mensaje simple
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/PrivateUser'
+
   SimpleSuccessResponse:
     description: Respuesta exitosa con mensaje simple
     content:
@@ -27,7 +34,6 @@ responses:
       application/json:
         schema:
           $ref: '#/components/schemas/SimpleError'
-          example: 'Error inesperado'
   
   BadRequestSimple:
     description: Petición incorrecta (error genérico)
