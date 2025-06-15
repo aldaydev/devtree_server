@@ -4,6 +4,10 @@ import 'dotenv/config';
 import router from './router';
 import { connectDB } from './config/db';
 import { corsConfig } from './config/cors';
+import swaggerUi from 'swagger-ui-express';
+import YAML from 'yamljs';
+import path from 'path';
+import { setupSwagger } from './config/swagger';
 
 // Conexión a la BD
 connectDB();
@@ -16,6 +20,9 @@ app.use(cors(corsConfig));
 
 // Leer datos de formularios
 app.use(express.json());
+
+// Swagger initialization
+setupSwagger(app);
 
 // Health endpoint
 app.get('/health', (req, res) => {

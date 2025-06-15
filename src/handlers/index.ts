@@ -37,7 +37,7 @@ export const createAccount = async (req: Request, res: Response) => {
         await user.save();
         res.status(201).send("Registro creado correctamente");
     } catch (error) {
-        res.status(400).json(error.message);
+        res.status(400).json({error: error.message});
     }
 };
 
@@ -65,13 +65,13 @@ export const login = async (req: Request, res: Response) => {
         res.status(200).json({token});
 
     } catch (error) {
-        res.status(400).json(error.message);
+        res.status(400).json({error: error.message});
     }
 };
 
 // Controlador para OBTENER LOS DATOS DEL USUARIO
 export const getUser = async (req: Request, res: Response) => {
-    res.json(req.user);
+    res.status(200).json(req.user);
 };
 
 // Controlador para ACTUALIZAR EL PERFIL
@@ -97,7 +97,7 @@ export const updateProfile = async (req: Request, res: Response) => {
         //Cuardamos los datos
         await req.user.save();
 
-        res.send("Perfi actualizado correctamente");
+        res.status(200).send("Perfi actualizado correctamente");
 
     } catch (error) {
         error = new Error("Hubo un error");
@@ -122,7 +122,7 @@ export const updateAccount = async (req: Request, res: Response) => {
         //Cuardamos los datos
         await req.user.save();
 
-        res.send("Cuenta actualizada correctamente");
+        res.status(200).send("Cuenta actualizada correctamente");
 
     } catch (error) {
         error = new Error("Hubo un error");
@@ -138,7 +138,7 @@ export const deleteAccount = async (req: Request, res: Response) => {
             cloudinary.uploader.destroy(prevImageId)
         }
         await User.deleteOne({email: req.user.email});
-        res.send('La cuenta ha sido eliminada correctamente');
+        res.status(200).send('La cuenta ha sido eliminada correctamente');
     } catch (error) {
         error = new Error("Hubo un error");
         res.status(500).json({ error: error.message });
@@ -168,7 +168,7 @@ export const uploadImage = async (req: Request, res: Response) => {
                     req.user.image = result.secure_url;
                     await req.user.save();
                     if(prevImageId) cloudinary.uploader.destroy(prevImageId);
-                    res.json({image: result.secure_url});
+                    res.status(200).json({image: result.secure_url});
                 }
             });
         });
@@ -189,7 +189,7 @@ export const getUserByUsername = async (req: Request, res: Response) => {
 
         if(!user){
             const error = new Error('El usuario no existe');
-            res.status(404).json(error.message)
+            res.status(404).json({error: error.message})
             return
         }else{
             res.status(200).json(user)

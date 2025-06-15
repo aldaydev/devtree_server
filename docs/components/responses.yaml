@@ -1,0 +1,53 @@
+responses:
+
+  SimpleSuccessResponse:
+    description: Respuesta exitosa con mensaje simple
+    content:
+      text/plain:
+        schema:
+          type: string
+          example: Mensaje existoso
+
+  TokenResponse:
+    description: Respuesta con token de autenticación
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            token:
+              type: string
+              example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+          required:
+            - token
+
+  InternalServerError:
+    description: Error interno del servidor
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/SimpleError'
+          example: 'Error inesperado'
+  
+  BadRequestSimple:
+    description: Petición incorrecta (error genérico)
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/SimpleError'
+
+  ValidationError:
+    description: Error de validación (uno o varios campos incorrectos)
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ValidationErrorArray'
+
+  UnauthorizedError:
+    description: Error de autenticación
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/SimpleError'
+        example:
+          error: "No autorizado"

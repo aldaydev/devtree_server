@@ -1,0 +1,125 @@
+schemas:
+
+  RegisterRequest:
+    type: object
+    required:
+      - username
+      - name
+      - email
+      - password
+    properties:
+      username:
+        type: string
+        example: pepito123
+      name:
+        type: string
+        example: Pepito Pérez
+      email:
+        type: string
+        format: email
+        example: pepito@correo.com
+      password:
+        type: string
+        format: password
+        example: password123
+
+  PrivateUser:
+    type: object
+    properties:
+      _id:
+        type: string
+        example: "684ed2ceeed035dd736d8c64"
+      username:
+        type: string
+        example: "pepito"
+      name:
+        type: string
+        example: "Pepito"
+      email:
+        type: string
+        format: email
+        example: "pepito@pepito.es"
+      description:
+        type: string
+        example: ""
+      image:
+        type: string
+        example: ""
+      links:
+        type: string
+        example: "[]"
+      __v:
+        type: integer
+        example: 0
+    required:
+      - _id
+      - username
+      - name
+      - email
+      - description
+      - image
+      - links
+      - __v
+  
+  PublicUser:
+    type: object
+    properties:
+      username:
+        type: string
+        example: "pepito"
+      name:
+        type: string
+        example: "Pepito"
+      description:
+        type: string
+        example: ""
+      image:
+        type: string
+        example: ""
+      links:
+        type: string
+        example: "[]"
+    required:
+      - username
+      - name
+      - description
+      - image
+      - links
+
+  SimpleError:
+    type: object
+    properties:
+      error:
+        type: string
+        example: "Mensaje de error específico"
+    required:
+      - error
+
+  ValidationErrorItem:
+    type: object
+    properties:
+      type:
+        type: string
+        example: "field"
+      msg:
+        type: string
+        example: "El nombre de usuario no puede estar vacío"
+      path:
+        type: string
+        example: "username"
+      location:
+        type: string
+        example: "body"
+      value:
+        type: string
+        example: ""
+    required:
+      - type
+      - msg
+      - path
+      - location
+
+  ValidationErrorArray:
+    type: array
+    items:
+      $ref: '#/components/schemas/ValidationErrorItem'

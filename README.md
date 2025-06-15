@@ -31,6 +31,18 @@ Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu
 
 A partir de aquí podrás ver mis anotaciones sobre cada "sprint" o "rama" en la que ido trabajando. 
 
+## Doc (backend)
+
+Documentación con swagger de todos los endpoints
+
+* Instalación de swagger y yaml
+    - npm install swagger-ui-express yamljs swagger-jsdoc
+    - Instalamos los types de jsdoc ==> npm install --save-dev @types/swagger-jsdoc
+    - Instalamos los ypes de swagger ui ==> npm i --save-dev @types/swagger-ui-express
+    - Instalamos los types de yaml ==> npm install --save-dev @types/yamljs
+* Creación del directorio /tests y el archivo general swagger.yaml
+
+
 ## Remake 3 (backend)
 
 Realización de testing con JEST

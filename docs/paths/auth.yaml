@@ -1,0 +1,22 @@
+/auth/register:
+  post:
+    tags:
+      - Auth
+    summary: Registrar nuevo usuario
+    description: Crea una cuenta de usuario nueva.
+
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RegisterRequest"
+
+    responses:
+      "201":
+        $ref: "#/components/responses/SimpleSuccessResponse"
+              
+      "400":
+        $ref: '#/components/responses/ValidationError'
+      "400-alt":
+        $ref: '#/components/responses/BadRequestSimple'
