@@ -1,0 +1,49 @@
+/account:
+  patch:
+    tags:
+      - Account
+    summary: Modificar la cuenta
+    description: Actualiza campos específicos de la cuenta
+
+    security:
+      - bearerAuth: []
+
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AccountUpdateRequest'
+
+    responses:
+      "200":
+        $ref: "#/components/responses/SimpleSuccessResponse"
+      "422":
+        $ref: '#/components/responses/ValidationError'
+      "401": 
+        $ref: '#/components/responses/UnauthorizedError'
+      "404":
+        $ref: '#/components/responses/BadRequestSimple'
+      "500":
+        $ref: '#/components/responses/InternalServerError'
+
+  delete:
+    tags:
+      - Account
+    summary: Eliminar la cuenta
+    description: Elimina la cuenta definitivamente
+
+    security:
+      - bearerAuth: []
+
+    responses:
+      "200":
+        $ref: "#/components/responses/SimpleSuccessResponse"
+      "422":
+        $ref: '#/components/responses/ValidationError'
+      "401": 
+        $ref: '#/components/responses/UnauthorizedError'
+      "404":
+        $ref: '#/components/responses/BadRequestSimple'
+      "500":
+        $ref: '#/components/responses/InternalServerError'

@@ -15,6 +15,20 @@ responses:
           type: string
           example: Mensaje existoso
 
+  UploadResponse:
+    description: Respuesta con la url de la imagen
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            image:
+              type: string
+              format: uri
+              example: "https://res.cloudinary.com/miapp/image/upload/v1234567/avatar.jpg"
+          required:
+            - image
+
   TokenResponse:
     description: Respuesta con token de autenticación
     content:

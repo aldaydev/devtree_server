@@ -10,18 +10,18 @@ schemas:
     properties:
       username:
         type: string
-        example: pepito123
+        example: "pepito123"
       name:
         type: string
-        example: Pepito Pérez
+        example: "Pepito Pérez"
       email:
         type: string
         format: email
-        example: pepito@correo.com
+        example: "pepito@correo.com"
       password:
         type: string
         format: password
-        example: password123
+        example: "password123"
   
   LoginRequest:
     type: object
@@ -32,11 +32,11 @@ schemas:
       email:
         type: string
         format: email
-        example: pepito@correo.com
+        example: "pepito@correo.com"
       password:
         type: string
         format: password
-        example: password123
+        example: "password123"
 
   PrivateUser:
     type: object
@@ -81,7 +81,7 @@ schemas:
     properties:
       username:
         type: string
-        example: "pepito"
+        example: "Pepito Pérez 2"
       description:
         type: string
         example: "Descripción del perfil de peppito"
@@ -91,6 +91,26 @@ schemas:
     required:
       - username
 
+  ImageUpdateRequest:
+    type: object
+    properties:
+      file:
+        type: string
+        format: binary
+    required:
+      - file
+  
+  AccountUpdateRequest:
+    type: object
+    properties:
+      name:
+        type: string
+        example: "Pepito 2"
+      password:
+        type: string
+        example: "Password456"
+    required:
+      - name
 
   PublicUser:
     type: object
@@ -116,6 +136,15 @@ schemas:
       - description
       - image
       - links
+
+  SearchRequest:
+    type: object
+    required:
+      - username
+    properties:
+      username:
+        type: string
+        example: "pepito123"
 
   SimpleError:
     type: object

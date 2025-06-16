@@ -46,3 +46,93 @@
         $ref: '#/components/responses/InternalServerError'
       "400":
         $ref: '#/components/responses/BadRequestSimple'
+
+/user/image:
+  post:
+    tags:
+      - User
+    summary: Subir una imagen de perfil
+    description: Este endpoint permite al usuario autenticado subir una imagen. El archivo debe enviarse como multipart/form-data.
+
+    security:
+      - bearerAuth: []
+    
+    requestBody:
+      required: true
+      content:
+        multipart/form-data:
+          schema:
+            type: object
+            properties:
+              image:
+                type: string
+                format: binary
+                description: Imagen del usuario a subir
+    
+    responses:
+      "200":
+        description: Imagen subida correctamente
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadResponse'
+      "400":
+        $ref: '#/components/responses/BadRequestSimple'
+      "401": 
+        $ref: '#/components/responses/UnauthorizedError'
+      "404":
+        $ref: '#/components/responses/BadRequestSimple'
+      "500":
+        $ref: '#/components/responses/InternalServerError'
+
+/{username}:
+  get:
+    tags:
+      - User
+    summary: Obtener un usuario por su username
+    description: Devuelve los datos públicos de un usuario específico por su nombre de usuario.
+
+    parameters:
+      - name: username
+        in: path
+        required: true
+        description: Nombre de usuario del usuario que se quiere obtener.
+        schema:
+          type: string
+          example: pepito123
+
+    responses:
+      "200":
+        description: Usuario encontrado correctamente
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublicUser'
+      "404":
+        $ref: '#/components/responses/BadRequestSimple'
+      "500":
+        $ref: '#/components/responses/InternalServerError'
+
+/search:
+  post:
+    tags:
+      - User
+    summary: Buscar un nombre de usuario
+    description: Comprueba si un nombre de usuario está libre o no
+
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SearchRequest"
+
+    responses:
+      "201":
+        $ref: "#/components/responses/SimpleSuccessResponse"
+      "422":
+        $ref: '#/components/responses/ValidationError'
+      "409":
+        $ref: '#/components/responses/BadRequestSimple'
+      "500":
+        $ref: '#/components/responses/InternalServerError'

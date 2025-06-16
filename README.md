@@ -23,6 +23,9 @@ Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu
 ### 🧪 TESTING  
 ![JEST](https://img.shields.io/badge/JEST-C21325?style=for-the-badge&logo=jest&logoColor=white)  ![SUPERTEST](https://img.shields.io/badge/SUPERTEST-CC3534?style=for-the-badge&logo=npm&logoColor=white)
 
+### 📚 DOCUMENTACIÓN  
+![SWAGGER](https://img.shields.io/badge/SWAGGER-2596BE?style=for-the-badge&logo=swagger&logoColor=white)
+
 ## Enlace al repositorio del front:
 
 [![VER REPOSITORIO](https://img.shields.io/badge/📂_Repositorio_Frontend-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/aldaydev/mlink_client)
@@ -41,6 +44,8 @@ Documentación con swagger de todos los endpoints
     - Instalamos los ypes de swagger ui ==> npm i --save-dev @types/swagger-ui-express
     - Instalamos los types de yaml ==> npm install --save-dev @types/yamljs
 * Creación del directorio /tests y el archivo general swagger.yaml
+* Creación de schemas y respuestas predefinidas
+* Documentación de todos los endpoints
 
 
 ## Remake 3 (backend)

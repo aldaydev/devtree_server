@@ -157,7 +157,7 @@ export const uploadImage = async (req: Request, res: Response) => {
 
         const form = formidable({ multiples: false });
         form.parse(req, (error, fields, files) => {
-            cloudinary.uploader.upload(files.file[0].filepath, {public_id: uuid()}, async function (error, result) {
+            cloudinary.uploader.upload(files.image[0].filepath, {public_id: uuid()}, async function (error, result) {
                 if(error){
                     const error = new Error("Hubo un error al subir la imagen");
                     res.status(500).json({ error: error.message });
@@ -213,7 +213,7 @@ export const searchByUsername = async (req: Request, res: Response) => {
             const error = new Error(`${username} ya está registrado`);
             res.status(409).json({error: error.message});
         }else{
-            res.send(`${username} está disponible`);
+            res.status(200).send(`${username} está disponible`);
         }
 
     } catch (error) {

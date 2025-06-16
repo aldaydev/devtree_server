@@ -3,12 +3,17 @@ info:
   title: MLink con Swagger
   version: 1.0.0
   description: Documentación de la API Rest "MLink" usando Swagger
+  contact:
+    name: Rafael Alday
+    url: https://alday.dev
+    email: aldaydev@gmail.com
 
 servers:
-  - url: http://localhost:4000
-    description: Servidor local
   - url: https://devtree-server-nwgs.onrender.com
     description: Production server
+  - url: http://localhost:4000
+    description: Servidor local
+  
 
 paths: {}       # Lo dejamos vacío, se combina con los paths externos
 components:
