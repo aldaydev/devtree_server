@@ -34,6 +34,12 @@ Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu
 
 A partir de aquí podrás ver mis anotaciones sobre cada "sprint" o "rama" en la que ido trabajando. 
 
+## Docker
+
+Configuración de docker para desplegar en EC2 (AWS)
+* Crear archivos dockerfile y .dockerignore
+* Crear imagen ==> 
+
 ## Doc (backend)
 
 Documentación con swagger de todos los endpoints
