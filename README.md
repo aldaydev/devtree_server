@@ -27,10 +27,9 @@ Mlink es una app tipo "link tree" pensada para músicos. En ella puedes crear tu
 ![SWAGGER](https://img.shields.io/badge/SWAGGER-2596BE?style=for-the-badge&logo=swagger&logoColor=white)
 
 ### 🔧 Tecnologías de despliegue  
-![DOCKER](https://img.shields.io/badge/DOCKER-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![AWS EC2](https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=black)
+![DOCKER](https://img.shields.io/badge/DOCKER-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![AWS EC2](https://img.shields.io/badge/AWS_EC2-D97706?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
 ## Enlace al repositorio del front:
-
 [![VER REPOSITORIO](https://img.shields.io/badge/📂_Repositorio_Frontend-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/aldaydev/mlink_client)
 
 ----------------------------------------------
